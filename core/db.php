@@ -30,6 +30,8 @@ while($employer = $res_employer->fetch()){
 
 //-----------------------------------------------------
 
+
+
 function getCompany($id){
 
   global $pdo;
@@ -61,4 +63,12 @@ function deleteCompany($id){
 
   return $pdo->exec($sqlString);
 }
+
+function countCompany($id){
+  global $pdo;
+  $res_count = "SELECT COUNT(*) FROM employer WHERE id_company = '$id'";
+
+  return $pdo->exec($res_count);
+}
+
 ?>

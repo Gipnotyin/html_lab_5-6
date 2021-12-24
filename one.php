@@ -7,6 +7,8 @@ if(isset($_GET["id"])){
         $deleteRes = deleteCompany($company["id_company"]);
         header("Location: http://localhost/html_lab_5-6/index.php");
     }
+    $countEmloyer = countCompany($company["id_company"]);
+    
 ?>
 <div class="fon_one_str"></div>
 <div class="card text-center">
@@ -22,6 +24,9 @@ if(isset($_GET["id"])){
           </div>
           <div class="card-footer text-muted">
             Директор компании: <?php echo $company["director"]?>
+          </div>
+          <div class="card-footer text-muted">
+            Количество сотрудников компании: <?php  echo "<p>" .$countEmloyer. "</p>" ?>
           </div>
         </div>
         <div class="indent"></div>
